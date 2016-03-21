@@ -1,0 +1,55 @@
+float sunX,sunY;
+float xGold,yGold;
+ void setup(){
+  size(600, 600);  
+}
+
+ void draw(){
+  scene();
+  person();
+  message();
+  action();
+}
+
+ void scene(){
+    background(00, 191, 255);    //background color
+    fill(124,252,0);            //grass
+    rect(00,400,600,600);
+         //Building a house
+        fill( 150, 65, 10);
+        rect( 50, 350, 100,50);     //bottom of the house
+        fill(150, 65, 10);
+        triangle( 50,350, 150,350, 100,300); //roof
+      fill(255,215,0);      //gold nugget
+      ellipse(xGold, yGold, 50,25); 
+}
+ 
+ void action(){
+       
+        fill( 255, 255, 0);    //sun color 
+        sunY=50;
+        ellipse( sunX, sunY, 45,45); //sun
+        sunX = sunX+1;   
+}
+ 
+ void mousePressed(){      
+      
+        xGold= xGold+20;
+        yGold= yGold+10;
+}
+ 
+ void person(){
+        // starting position of person
+              fill( 47,79,79 );           //person color
+              rect( mouseX,mouseY, 50,80 );                 //body
+              fill( 250, 235, 215);                        // head color
+              ellipse( mouseX+25,mouseY-20, 40,40 );      //head  
+              fill(0);                                   //Eyes 
+              ellipse(mouseX+15,mouseY-22, 5,5 );
+              ellipse(mouseX+35, mouseY-22, 5,5);     
+}
+ 
+ void message(){  
+            fill(0);
+            text( "Emily Papas" , 10, height-20 );
+}
